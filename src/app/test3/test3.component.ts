@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'test-test3',
-  templateUrl: './test3.component.html',
-  styleUrls: ['./test3.component.css']
+  template:` <h1 class="title">Go test!</h1>`,
+  styles: [`.title{color:green;}`]
 })
-export class Test3Component implements OnInit {
+export class Test3Component {
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }
