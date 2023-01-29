@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+  --scrollTop: 0;
+}
+
+@font-face {
+  font-family: raleway_f;
+  src: url("./assets/fonts/raleway-regular.woff2");
+}
+
+@font-face {
+  font-family: raleway_f;
+  src: url("./assets/fonts/raleway-black.woff2");
+  font-weight: 900;
+}
