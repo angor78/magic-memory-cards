@@ -33,7 +33,7 @@ export class AuthService {
 
   isAuth = false
 
-  // autMe() {
+  // authMe() {
   //   return this.http
   //     .post<ResponseSignInType>(`${environment.baseUrl}auth/me`).subscribe(res=>{
   //       //if(res.resultCode===0)this.isAuth=true
