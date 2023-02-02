@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient} from "@angular/common/http";
+import { AuthService } from './services/auth.service'
+import { NotificationService } from './services/notification.service'
 import {CredentialsInterceptor} from "./interceptors/credantionals.interceptor";
-import {AuthService} from "./services/auth.service";
-
-
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
+  imports: [CommonModule],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CredentialsInterceptor,
+      multi: true,
+    },
+    AuthService,
+    NotificationService,
   ],
-  providers:[AuthService,{provide: HTTP_INTERCEPTORS, useClass: CredentialsInterceptor, multi: true}],
 })
-export class CoreModule { }
+export class CoreModule {}
