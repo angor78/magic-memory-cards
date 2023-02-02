@@ -2,16 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
-import { ModalFormWindowComponent } from './components/modal-form-window/modal-form-window.component';
+import { ModalComponent } from './components/modal/modal.component';
+import {AuthModule} from "../auth/auth.module";
+import {HttpClient} from "@angular/common/http";
 
 
 @NgModule({
   declarations: [
-    ModalFormWindowComponent
+    ModalComponent
+  ],
+  exports: [
+    ModalComponent
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
-  ]
+    SharedRoutingModule,
+    AuthModule
+  ],
+  providers:[]
 })
 export class SharedModule { }
