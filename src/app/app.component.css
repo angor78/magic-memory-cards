@@ -3,6 +3,7 @@ body {
   background-color: #010101;
   font-family: raleway_f, sans-serif;
   line-height: 1.55;
+
 }
 
 /*ADD*/
@@ -52,7 +53,7 @@ body {
 .layersCaption {
   font-size: calc(var(--index) / 1.175);
   letter-spacing: calc(var(--index) / 3.25);
-  margin-top: calc(var(--index) * -2.75);
+  margin-top: calc(var(--index) * -7.75);
   font-weight: 500;
 }
 
@@ -101,6 +102,20 @@ body {
   text-shadow: 0 0 15px #9e7d35;
 }
 
+.modal {
+  z-index: 15;
+  position: absolute;
+  font-size: calc(var(--index) / 1.175);
+  letter-spacing: calc(var(--index) / 3.25);
+  margin: auto;
+  margin-top: calc(var(--index) * -14.75);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #e7e7e0;
+  text-shadow: 0 0 15px #9e7d35;
+  bottom: calc(var(--index) * 30);
+}
+
 .mainArticle {
   background-image: url("../assets/img/dungeon.jpg");
   min-height: 100vh;
@@ -138,3 +153,4 @@ body {
   opacity: 0.45;
   font-size: calc(var(--index) * .75);
 }
+
