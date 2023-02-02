@@ -1,7 +1,76 @@
-<p>login works!</p>
-<form >
-  <input type="email"/>
-  <input type="password"/>
-  <button type="submit">login</button>
-</form>
+<!--<div class="auth-container">-->
+<!--  <h1>Sign in</h1>-->
+<!--  <form>-->
+<!--    <input-->
+<!--      id="email"-->
+<!--      name="email"-->
+<!--      type="email"-->
+<!--    />-->
+<!--    <input-->
+<!--      id='password'-->
+<!--      type='password'-->
+<!--    />-->
+<!--    <input type="checkbox" id='rememberMe'/>-->
+<!--    Remember me-->
+
+<!--    <div class='forgotMe'>-->
+<!--      <a>Forgot Password?</a>-->
+<!--    </div>-->
+<!--    <div class='auth-button-wrapper'>-->
+<!--      <button class="button"  type='submit'>Sign-->
+<!--        in-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </form>-->
+<div class="auth-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()" class="form">
+    <!-- Email -->
+    <label>
+      Введите email
+      <input
+        type="text"
+        formControlName="email"
+        required
+        [ngClass]="{
+          inputError: email!.invalid && (email!.dirty || email!.touched),
+          inputSuccess: email!.valid
+        }"
+      />
+    </label>
+    <div *ngIf="email!.invalid && (email!.dirty || email!.touched)" class="error">
+      <div *ngIf="email!.errors?.['required']">Email is required</div>
+      <div *ngIf="email!.errors?.['pattern']">Email incorrect pattern</div>
+    </div>
+
+    <!-- Password -->
+    <label>
+      Введите password
+      <input
+        type="password"
+        formControlName="password"
+        required
+        [ngClass]="{
+          inputError: password!.invalid && (password!.dirty || password!.touched),
+          inputSuccess: password!.valid
+        }"
+      />
+    </label>
+    <div *ngIf="password!.invalid && (password!.dirty || password!.touched)" class="error">
+      <div *ngIf="password!.errors?.['required']">Password is required.</div>
+      <div *ngIf="password!.errors?.['minlength']">Name must be at least 3 characters long.</div>
+    </div>
+
+    <!-- Remember me -->
+    <label> <input type="checkbox" formControlName="rememberMe" /> remember me </label>
+
+    <button type="submit" [disabled]="loginForm.invalid">sign in</button>
+  </form>
+</div>
+
+
+<!--  <div class='add-reg-block'>-->
+<!--    <p>Already have an account?</p>-->
+<!--    <a class='underlinedLink'>Sign Up</a>-->
+<!--  </div>-->
+<!--</div>-->
 
