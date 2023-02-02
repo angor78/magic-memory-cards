@@ -6,6 +6,9 @@ import {CoreModule} from "./core/core.module";
 import {AppComponent} from "./app.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {AuthModule} from "./auth/auth.module";
+import {SharedModule} from "./shared/shared.module";
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import {AuthModule} from "./auth/auth.module";
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    AuthModule
+    SharedModule,
+    FormsModule,
+    AuthModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
