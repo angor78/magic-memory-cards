@@ -2,29 +2,26 @@
 <header class="mainHeader">
   <div class="layers">
     <div class="layersHeader">
-      <div class="layersCaption">Cards for learn</div>
-      <div class="layersTitle">Magic memory</div>
+      <div class="layersCaption">Карты для припоминания</div>
+      <div class="layersTitle">Мнемоклад</div>
     </div>
-
+    <a class="scrollToDown" (click)="scrollToElement(myArtical)" >Начать обучение</a>
 
     <div class="layersBase"></div>
     <div class="layersMiddle"></div>
     <div class="layersFront"></div>
   </div>
 </header>
-
-<article class="mainArticle">
+<article class="mainArticle" #myArtical>
   <div class="mainArticleContent">
-    <h2 class="mainArticleHeader">Для своих проектов</h2>
+    <h2 class="mainArticleHeader">Учебный проект на Angular</h2>
     <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto quo, vel! Eum, fuga
       hic mollitia odio
       officiis possimus quam! Aliquid beatae cum deleniti enim esse fugiat incidunt inventore necessitatibus
       reprehenderit voluptates. Ducimus.
     </p>
-    <button class="button" (click)="openModal('custom-modal-1')">Sign in</button>
+    <button class="button" (click)="openModal('custom-modal-1')">Войти</button>
   </div>
-
-
   <div class="copy">© Angor78</div>
 </article>
 <div class="modal">
@@ -32,3 +29,4 @@
     <app-login></app-login>
   </jw-modal>
 </div>
+

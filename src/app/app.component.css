@@ -5,9 +5,25 @@ body {
   line-height: 1.55;
 
 }
-
+.bottom:hover{
+  transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+}
 /*ADD*/
-
+.scrollToDown{
+  position: absolute;
+  bottom:300px;
+  z-index: 5;
+  font-size: calc(var(--index) / 1.175);
+  letter-spacing: calc(var(--index) / 3.25);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #e7e7e0;
+  text-shadow: 0 0 15px #9e7d35;
+  cursor: pointer;
+}
+.scrollToDown:hover{
+  color: goldenrod;
+}
 .mainHeader {
   position: relative;
 }
@@ -53,7 +69,7 @@ body {
 .layersCaption {
   font-size: calc(var(--index) / 1.175);
   letter-spacing: calc(var(--index) / 3.25);
-  margin-top: calc(var(--index) * -7.75);
+  margin-top: calc(var(--index) * -3.75);
   font-weight: 500;
 }
 
