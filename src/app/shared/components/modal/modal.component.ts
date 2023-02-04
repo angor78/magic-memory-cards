@@ -10,7 +10,7 @@ import {ModalService} from "../../services/modal.service";
 })
 export class ModalComponent implements OnInit, OnDestroy {
   @Input() id: string = '';
-  private element: any;
+  private readonly element;
 
   constructor(private modalService: ModalService, private el: ElementRef) {
     this.element = el.nativeElement;
@@ -19,7 +19,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // ensure id attribute exists
     if (!this.id) {
-      console.error('modal must have an id');
+      // console.error('modal must have an id');
       return;
     }
 
@@ -33,7 +33,7 @@ export class ModalComponent implements OnInit, OnDestroy {
       }
     });
 
-    // add self (this modal instance) to the modal service so it's accessible from controllers
+    // add self (this modal instance) to the modal service, so it's accessible from controllers
     this.modalService.add(this);
   }
 

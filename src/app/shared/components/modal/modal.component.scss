@@ -11,19 +11,27 @@ jw-modal {
     right: 0;
     bottom: 0;
     left: 0;
-
     /* z-index must be higher than .jw-modal-background */
     z-index: 1000;
 
     /* enables scrolling for tall modals */
     overflow: auto;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .jw-modal-body {
-      padding: 20px;
-      background: #fff;
-
+      width: 400px;
+      padding: 50px;
       /* margin exposes part of the modal background */
       margin: 40px;
+      background-image: url('../../../../assets/img/bgModal.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
   }
 
@@ -40,6 +48,7 @@ jw-modal {
     //opacity: 0.75;
     //
     ///* z-index must be below .jw-modal and above everything else  */
+
     z-index: 900;
   }
 }

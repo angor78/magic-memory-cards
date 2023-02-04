@@ -24,9 +24,8 @@ export class AppComponent implements OnInit {
     this.modalService.close(id);
   }
 
-  scrollToElement($element:any): void {
-    console.log($element);
-    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  scrollToElement(element:any): void {
+    element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 
 }
