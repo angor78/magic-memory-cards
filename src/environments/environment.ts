@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl:'https://neko-back.herokuapp.com/2.0/',
-  baseLocalUrl:'http://localhost:7542/2.0/',
+  baseUrl:'https://neko-back.herokuapp.com/2.0',
+  baseLocalUrl:'http://localhost:7542/2.0',
   //apiKey:'bd4ae310-899e-41ab-b129-c57668c4e43e'
 };
 

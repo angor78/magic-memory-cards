@@ -28,11 +28,23 @@
 .underlinedLink {
   display: inline-block;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 24px;
   margin: 0 auto;
   text-decoration-line: underline;
-  color: #366EFF;
+  color: blue;
+  cursor: pointer;
+}
+.forgotMe {
+  margin-top: 7px;
+}
+
+.forgotMe a {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration-line: underline;
+  color: blue;
   cursor: pointer;
 }
 .error {
