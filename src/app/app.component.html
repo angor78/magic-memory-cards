@@ -4,7 +4,7 @@
       <div class="layersCaption">Карты для припоминания</div>
       <div class="layersTitle">Мнемоклад</div>
     </div>
-    <a class="scrollToDown" (click)="scrollToElement(myArtical)" >Начать обучение</a>
+    <a class="scrollToDown" (click)="scrollToElement(myArtical)">Начать обучение</a>
     <div class="layersBase"></div>
     <div class="layersMiddle"></div>
     <div class="layersFront"></div>
@@ -18,14 +18,18 @@
       officiis possimus quam! Aliquid beatae cum deleniti enim esse fugiat incidunt inventore necessitatibus
       reprehenderit voluptates. Ducimus.
     </p>
-    <button class="button" (click)="openModal('custom-modal-1')">Войти</button>
+    <button class="button" (click)="openModal('login')" >Войти</button>
   </div>
   <div class="copy">© Angor78</div>
 </article>
 
 <div class="modal">
-  <jw-modal id="custom-modal-1">
-    <magic-login></magic-login>
+  <jw-modal id="login">
+      <magic-login></magic-login>
+  </jw-modal>
+  <jw-modal id="profile">
+      <magic-profile></magic-profile>
   </jw-modal>
 </div>
+
 

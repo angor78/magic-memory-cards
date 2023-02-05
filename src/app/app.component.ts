@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ModalService} from "./shared/services/modal.service";
+import {AuthService} from "./core/services/auth.service";
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -9,11 +11,10 @@ import {ModalService} from "./shared/services/modal.service";
 })
 export class AppComponent implements OnInit {
 
-  constructor(private modalService: ModalService) {
+  constructor(private modalService: ModalService, private authService: AuthService) {
   }
-
   ngOnInit() {
-
+    this.authService.me()
   }
 
   openModal(id: string) {
@@ -24,7 +25,7 @@ export class AppComponent implements OnInit {
     this.modalService.close(id);
   }
 
-  scrollToElement(element:any): void {
+  scrollToElement(element: any): void {
     element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 

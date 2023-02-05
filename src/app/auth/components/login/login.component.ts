@@ -1,6 +1,8 @@
 import { Component } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { Router } from '@angular/router'
 import { AuthService } from '../../../core/services/auth.service'
+import {ModalService} from "../../../shared/services/modal.service";
 
 @Component({
   selector: 'magic-login',
@@ -23,7 +25,7 @@ export class LoginComponent {
     rememberMe: new FormControl<boolean>(false, { nonNullable: true }),
   })
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, ) {}
 
   get email() {
     return this.loginForm.get('email')
@@ -37,4 +39,5 @@ export class LoginComponent {
     const value = this.loginForm.value
     this.authService.login(value)
   }
+
 }

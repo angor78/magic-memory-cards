@@ -1,5 +1,6 @@
 import {Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy} from '@angular/core';
 import {ModalService} from "../../services/modal.service";
+import {AuthService} from "../../../core/services/auth.service";
 
 
 @Component({
@@ -51,6 +52,7 @@ export class ModalComponent implements OnInit, OnDestroy {
 
   // close modal
   close(): void {
+    console.log('yo12')
     this.element.style.display = 'none';
     document.body.classList.remove('jw-modal-open');
   }

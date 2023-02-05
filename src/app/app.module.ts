@@ -9,6 +9,7 @@ import {AuthModule} from "./auth/auth.module";
 import {SharedModule} from "./shared/shared.module";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {ProfileModule} from "./profile/profile.module";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {HttpClientModule} from "@angular/common/http";
     SharedModule,
     FormsModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    ProfileModule
   ],
   providers: [],
   bootstrap: [AppComponent]

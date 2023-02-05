@@ -1,0 +1,7 @@
+<p>profile works!</p>
+<!--<img src="{{avatar}}" alt="avatar">-->
+<!--<span>{{name}}</span>-->
+<div *ngIf="profileData$ | async let profile">{{profile.fullName}}</div>
+
+<button class="button" (click)="logOutHandler()" >Выйти</button>
+
