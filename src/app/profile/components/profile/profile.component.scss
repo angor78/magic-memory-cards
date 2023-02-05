@@ -1,0 +1,59 @@
+.profileInfo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  //width: 413px;
+  //padding: 27px 30px 36px;
+  //margin: 12px auto 0;
+}
+
+.title {
+  height: 27px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  //margin-top: 27px;
+}
+
+.blockAvatar {
+  width: 96px;
+  height: 96px;
+  margin-top: 30px;
+}
+
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border: 3px solid saddlebrown;
+  border-radius: 50%;
+}
+
+.blockName {
+  margin-top: 17px;
+}
+
+.name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.blockEmail {
+  margin-top: 14px;
+  cursor: default;
+}
+
+.email {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  opacity: 0.5;
+}
+
+.blockButton {
+  margin-top: 20px;
+}

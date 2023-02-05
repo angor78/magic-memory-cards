@@ -1,7 +1,24 @@
-<p>profile works!</p>
-<!--<img src="{{avatar}}" alt="avatar">-->
-<!--<span>{{name}}</span>-->
-<div *ngIf="profileData$ | async let profile">{{profile.fullName}}</div>
 
-<button class="button" (click)="logOutHandler()" >Выйти</button>
+<div class="profileInfo" *ngIf="profileData$ | async let profile">
+  <h2 class='title'>Personal Information</h2>
+  <div class='blockAvatar'>
+    <img class='avatar' src="{{profile.avatar}}" alt="avatar"/>
+<!--    <UploadAvatar/>-->
+  </div>
+  <div class='blockName'>
+<!--    <EditableSpan/>-->
+    <span class='name'>{{profile.name}}</span>
+  </div>
+  <div class='blockEmail'>
+    <span class='email'>{{profile.email}}</span>
+  </div>
+  <!--    <SuperButton isLoading={isLoading} disabled={isLoading} onClick={logOutHandler} superClassName='withIcon'>-->
+  <!--      <img src={icon} alt={'icon'}/>-->
+  <!--      <span>Log Out</span>-->
+  <!--    </SuperButton>-->
+  <div class="blockButton">
+    <button class="button" (click)="logOutHandler()" >Выйти</button>
+  </div>
+</div>
+
 

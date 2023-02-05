@@ -13,7 +13,21 @@ import {ModalService} from "../../shared/services/modal.service";
 export class AuthService {
 
   isAuth = false
-  profileData$ = new BehaviorSubject<ResponseSignIn>({})
+  profileData$ = new BehaviorSubject<ResponseSignIn>({
+    _id: '',
+    email: '',
+    rememberMe: false,
+    isAdmin: false,
+    name: '',
+    verified: false,
+    publicCardPacksCount: 0,
+    created: '',
+    updated: '',
+    __v: 0,
+    token: '',
+    tokenDeathTime: 0,
+    avatar: '',
+  })
 
   resolveAuthRequest: Function = () => {
   }
@@ -32,12 +46,12 @@ export class AuthService {
   login(data: Partial<any>) {
     this.http
       .post<ResponseSignIn>(`${environment.baseUrl}/auth/login`, data)
-      // .pipe(catchError(this.errorHandler.bind(this)))
+      .pipe(catchError(this.errorHandler.bind(this)))
       .subscribe((res) => {
         if (res) {
+          this.profileData$.next(res)
           this.modalService.close('login')
           this.modalService.open('profile')
-          console.log(res)
         } else {
           // this.notificationService.handleError(res.messages[0])
         }

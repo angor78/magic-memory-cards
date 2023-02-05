@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../../core/services/auth.service";
 import {Observable} from "rxjs";
+import {ResponseSignIn} from "../../../core/models/auth.models";
 
 @Component({
   selector: 'magic-profile',
@@ -8,20 +9,18 @@ import {Observable} from "rxjs";
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  profileData$!: Observable<ResponseSignIn>
 
   constructor(private authService: AuthService) {
   }
 
-  profileData$!: Observable<any>
-  // // @ts-ignore
-  // avatar: string = this.profileData$.avatar
-  // // @ts-ignore
-  // name: string = this.profileData$.name
 
   ngOnInit(): void {
+    this.profileData$ = this.authService.profileData$
   }
 
   logOutHandler() {
     this.authService.logout()
   }
+
 }
