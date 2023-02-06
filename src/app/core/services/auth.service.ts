@@ -8,6 +8,8 @@ import {BehaviorSubject, catchError, EMPTY} from 'rxjs'
 import {NotificationService} from "./notification.service";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {ModalService} from "../../shared/services/modal.service";
+import {PreloaderService} from "../../shared/services/preloader.service";
+
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
@@ -40,15 +42,18 @@ export class AuthService {
     private router: Router,
     private notificationService: NotificationService,
     private modalService: ModalService,
+    private preloaderService: PreloaderService
   ) {
   }
 
   login(data: Partial<any>) {
+    this.preloaderService.setPreloader(true)
     this.http
       .post<ResponseSignIn>(`${environment.baseUrl}/auth/login`, data)
       .pipe(catchError(this.errorHandler.bind(this)))
       .subscribe((res) => {
         if (res) {
+          this.preloaderService.setPreloader(false)
           this.profileData$.next(res)
           this.modalService.close('login')
           this.modalService.open('profile')
@@ -56,14 +61,17 @@ export class AuthService {
           // this.notificationService.handleError(res.messages[0])
         }
       })
+
   }
 
   logout() {
+    this.preloaderService.setPreloader(true)
     this.http
       .delete<CommonResponse>(`${environment.baseUrl}/auth/me`, {})
       .pipe(catchError(this.errorHandler.bind(this)))
       .subscribe(res => {
         if (res) {
+          this.preloaderService.setPreloader(false)
           this.modalService.close('profile')
           this.modalService.open('login')
         }
@@ -87,7 +95,8 @@ export class AuthService {
     return EMPTY
   }
 }
+
 function providedIn(providedIn: any, arg1: string) {
-    throw new Error('Function not implemented.')
+  throw new Error('Function not implemented.')
 }
 

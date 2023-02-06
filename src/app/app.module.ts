@@ -23,9 +23,11 @@ import {ProfileModule} from "./profile/profile.module";
     FormsModule,
     AuthModule,
     HttpClientModule,
-    ProfileModule
+    ProfileModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+
+}

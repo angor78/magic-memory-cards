@@ -3,14 +3,17 @@ import { CommonModule } from '@angular/common';
 import { SharedRoutingModule } from './shared-routing.module';
 import { ModalComponent } from './components/modal/modal.component';
 import {AuthModule} from "../auth/auth.module";
+import { PreloaderComponent } from './components/preloader/preloader.component';
 
 
 @NgModule({
   declarations: [
-    ModalComponent
+    ModalComponent,
+    PreloaderComponent
   ],
   exports: [
-    ModalComponent
+    ModalComponent,
+    PreloaderComponent
   ],
   imports: [
     CommonModule,

@@ -48,6 +48,10 @@ code {
   border-radius: 30px;
   cursor: pointer;
 }
+.button:active{
+  box-shadow: none;
+  background-color: gray;
+}
 .button a {
   color: inherit;
   text-decoration: inherit;
@@ -94,3 +98,4 @@ code {
 .loadingIcon {
   max-width: 16px;
 }
+

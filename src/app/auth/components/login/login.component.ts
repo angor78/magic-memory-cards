@@ -39,5 +39,4 @@ export class LoginComponent {
     const value = this.loginForm.value
     this.authService.login(value)
   }
-
 }
