@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ModalService} from "../../../shared/services/modal.service";
+import {AuthService} from "../../../core/services/auth.service";
 
 @Component({
   selector: 'magic-dropdown-menu',
@@ -8,15 +9,20 @@ import {ModalService} from "../../../shared/services/modal.service";
 })
 export class DropdownMenuComponent implements OnInit {
 
-  constructor(private modalService: ModalService) { }
+  constructor(private modalService: ModalService, private authService: AuthService) {
+  }
 
   ngOnInit(): void {
   }
+
   openModal(id: string) {
     this.modalService.open(id);
   }
 
   closeModal(id: string) {
     this.modalService.close(id);
+  }
+  logoutHandler(){
+    this.authService.logout()
   }
 }

@@ -15,8 +15,10 @@
   <div *ngIf="isLoading$">
     <magic-preloader></magic-preloader>
   </div>
-  <magic-dropdown-menu></magic-dropdown-menu>
-  <div class="mainArticleContent">
+  <div *ngIf="isAuth$">
+    <magic-dropdown-menu></magic-dropdown-menu>
+  </div>
+  <div class="mainArticleContent" *ngIf="!isAuth$">
     <h2 class="mainArticleHeader">Учебный проект на Angular</h2>
     <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto quo, vel! Eum, fuga
       hic mollitia odio

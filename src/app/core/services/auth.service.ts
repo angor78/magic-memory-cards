@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core'
 import {environment} from '../../../environments/environment'
 import {CommonResponse} from '../models/core.models'
-import {ResultCodeEnum} from '../enums/resultCode.enum'
 import {Router} from '@angular/router'
-import {MeResponse, ResponseSignIn} from '../models/auth.models'
+import {ResponseSignIn} from '../models/auth.models'
 import {BehaviorSubject, catchError, EMPTY} from 'rxjs'
 import {NotificationService} from "./notification.service";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
@@ -14,7 +13,8 @@ import {PreloaderService} from "../../shared/services/preloader.service";
 @Injectable({providedIn: 'root'})
 export class AuthService {
 
-  isAuth = false
+  isAuth$ = new BehaviorSubject<boolean>(false)
+
   profileData$ = new BehaviorSubject<ResponseSignIn>({
     _id: '',
     email: '',
@@ -30,6 +30,7 @@ export class AuthService {
     tokenDeathTime: 0,
     avatar: '',
   })
+
 
   resolveAuthRequest: Function = () => {
   }
@@ -55,6 +56,7 @@ export class AuthService {
         if (res) {
           this.preloaderService.setPreloader(false)
           this.profileData$.next(res)
+          this.isAuth$.next(true)
           this.modalService.close('login')
           this.modalService.open('profile')
         } else {
@@ -72,22 +74,28 @@ export class AuthService {
       .subscribe(res => {
         if (res) {
           this.preloaderService.setPreloader(false)
+          this.isAuth$.next(false)
           this.modalService.close('profile')
-          this.modalService.open('login')
+          // this.modalService.open('login')
         }
       })
   }
 
   me() {
+    this.preloaderService.setPreloader(true)
     this.http
-      .post<CommonResponse<MeResponse>>(`${environment.baseUrl}/auth/me`, {})
+      .post<ResponseSignIn>(`${environment.baseUrl}/auth/me`, {})
       .pipe(catchError(this.errorHandler.bind(this)))
       .subscribe(res => {
-        if (res.resultCode == ResultCodeEnum.success) {
-          this.isAuth = true
+        if (res) {
+          this.preloaderService.setPreloader(false)
+          this.profileData$.next(res)
+          this.isAuth$.next(true)
         }
         this.resolveAuthRequest()
+
       })
+    this.preloaderService.setPreloader(false)
   }
 
   private errorHandler(err: HttpErrorResponse) {

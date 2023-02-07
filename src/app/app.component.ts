@@ -21,14 +21,17 @@ export class AppComponent implements OnInit {
   }
 
 
-  isLoading$?:boolean
-
+  isLoading$?: boolean
+  isAuth$: boolean = false
 
 
   ngOnInit() {
-    // this.authService.me()
-    this.preloaderService.isLoading$.subscribe(isLoading=>{
+    this.authService.me()
+    this.preloaderService.isLoading$.subscribe(isLoading => {
       this.isLoading$ = isLoading
+    })
+    this.authService.isAuth$.subscribe(isAuth => {
+      this.isAuth$ = isAuth
     })
   }
 
