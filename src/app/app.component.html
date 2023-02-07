@@ -15,6 +15,7 @@
   <div *ngIf="isLoading$">
     <magic-preloader></magic-preloader>
   </div>
+  <magic-dropdown-menu></magic-dropdown-menu>
   <div class="mainArticleContent">
     <h2 class="mainArticleHeader">Учебный проект на Angular</h2>
     <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto quo, vel! Eum, fuga
@@ -22,7 +23,7 @@
       officiis possimus quam! Aliquid beatae cum deleniti enim esse fugiat incidunt inventore necessitatibus
       reprehenderit voluptates. Ducimus.
     </p>
-    <button class="button" (click)="openModal('login')" >Войти</button>
+    <button class="button" (click)="openModal('login')" [disabled]="isLoading$ ? 'disabled' : null">Войти</button>
   </div>
   <div class="copy">© Angor78</div>
 </article>

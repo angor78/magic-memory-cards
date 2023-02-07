@@ -3,14 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './components/profile/profile.component';
+import { HeaderProfileComponent } from './components/header-profile/header-profile.component';
+import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.component';
 
 
 @NgModule({
   declarations: [
-    ProfileComponent
+    ProfileComponent,
+    HeaderProfileComponent,
+    DropdownMenuComponent
   ],
   exports: [
-    ProfileComponent
+    ProfileComponent,
+    DropdownMenuComponent
   ],
   imports: [
     CommonModule,
