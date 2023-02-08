@@ -8,8 +8,10 @@
   position: absolute;
   right: 5px;
   min-width: 126px;
-  background: #FFFFFF;
-  border: 1px solid #CFCFCF;
+  background-image: url('../../../../assets/img/bgModal.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
   z-index: 1;
 }

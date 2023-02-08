@@ -20,7 +20,7 @@ jw-modal {
     align-items: center;
     .jw-modal-body {
       width: 400px;
-      padding: 50px;
+      padding: 60px;
       /* margin exposes part of the modal background */
       margin: 40px;
       background-image: url('../../../../assets/img/bgModal.jpg');
@@ -31,6 +31,7 @@ jw-modal {
       justify-content: center;
       align-items: center;
       text-align: center;
+      border-radius: 3%;
     }
   }
 

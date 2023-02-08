@@ -4,16 +4,19 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { ModalComponent } from './components/modal/modal.component';
 import {AuthModule} from "../auth/auth.module";
 import { PreloaderComponent } from './components/preloader/preloader.component';
+import { NotifyComponent } from './components/notify/notify.component';
 
 
 @NgModule({
   declarations: [
     ModalComponent,
-    PreloaderComponent
+    PreloaderComponent,
+    NotifyComponent
   ],
   exports: [
     ModalComponent,
-    PreloaderComponent
+    PreloaderComponent,
+    NotifyComponent
   ],
   imports: [
     CommonModule,

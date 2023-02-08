@@ -12,6 +12,9 @@
 </header>
 
 <article class="mainArticle" #myArtical>
+
+    <magic-notify></magic-notify>
+
   <div *ngIf="isLoading$">
     <magic-preloader></magic-preloader>
   </div>
@@ -25,7 +28,7 @@
       officiis possimus quam! Aliquid beatae cum deleniti enim esse fugiat incidunt inventore necessitatibus
       reprehenderit voluptates. Ducimus.
     </p>
-    <button class="button" (click)="openModal('login')" [disabled]="isLoading$ ? 'disabled' : null">Войти</button>
+    <button class="button" (click)="openModal('login')">Войти</button>
   </div>
   <div class="copy">© Angor78</div>
 </article>

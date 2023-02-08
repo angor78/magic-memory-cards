@@ -4,6 +4,7 @@ import {AuthService} from "./core/services/auth.service";
 import {Observable} from "rxjs";
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {PreloaderService} from "./shared/services/preloader.service";
+import {NotificationService} from "./core/services/notification.service";
 
 
 @Component({

@@ -1,0 +1,28 @@
+.notification {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.notification-item {
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 13px;
+  color: #FFFFFF;
+  border-radius: 3px;
+  background-color: grey;
+
+}
+
+.notification-item--success {
+  background-color: rgba(104, 214, 104, 0.31);
+}
+
+.notification-item--error {
+  background-color: rgba(235, 72, 72, 0.35);
+}

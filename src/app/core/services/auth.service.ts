@@ -8,6 +8,7 @@ import {NotificationService} from "./notification.service";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {ModalService} from "../../shared/services/modal.service";
 import {PreloaderService} from "../../shared/services/preloader.service";
+import {Notify} from "../models/notify.models";
 
 
 @Injectable({providedIn: 'root'})
@@ -59,8 +60,10 @@ export class AuthService {
           this.isAuth$.next(true)
           this.modalService.close('login')
           this.modalService.open('profile')
-        } else {
-          // this.notificationService.handleError(res.messages[0])
+          this.notificationService.handleSuccess('Добро пожаловать!')
+          setTimeout(() => {
+            this.notificationService.clear()
+          }, 3000)
         }
       })
 
@@ -76,7 +79,6 @@ export class AuthService {
           this.preloaderService.setPreloader(false)
           this.isAuth$.next(false)
           this.modalService.close('profile')
-          // this.modalService.open('login')
         }
       })
   }
@@ -89,6 +91,10 @@ export class AuthService {
       .subscribe(res => {
         if (res) {
           this.preloaderService.setPreloader(false)
+          this.notificationService.handleSuccess('Добро пожаловать!')
+          setTimeout(() => {
+            this.notificationService.clear()
+          }, 3000)
           this.profileData$.next(res)
           this.isAuth$.next(true)
         }
@@ -99,7 +105,12 @@ export class AuthService {
   }
 
   private errorHandler(err: HttpErrorResponse) {
+    this.preloaderService.setPreloader(false)
+    this.modalService.close('login')
     this.notificationService.handleError(err.message)
+    setTimeout(() => {
+      this.notificationService.clear()
+    }, 5000)
     return EMPTY
   }
 }
