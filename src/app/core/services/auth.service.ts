@@ -79,6 +79,7 @@ export class AuthService {
           this.preloaderService.setPreloader(false)
           this.isAuth$.next(false)
           this.modalService.close('profile')
+          this.modalService.open('login')
         }
       })
   }
